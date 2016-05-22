@@ -9,6 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var quoteButton: UIButton!
+    
+    @IBOutlet weak var quoteView: UIImageView!
+    
+    var quotesArray:[String] = ["grendel","catcher","design","stranger","alchemist","vendetta","watchmen","bfg","alice","grapes","naked","neuromancer","thinking","voice","american","good"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func playButton(sender: UIButton) {
+        
+        var randomNumber = Int(arc4random_uniform(16))
+        
+        var imageName:String = self.quotesArray[randomNumber]
+        
+        self.quoteView.image = UIImage(named: imageName)
+    }
+
+    
 
 
 }

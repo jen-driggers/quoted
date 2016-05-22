@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					86A53AEB1CE96EEF00C5A4EC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 44TKP7EN37;
 					};
 					86A53AFF1CE96EEF00C5A4EC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -399,10 +400,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Quoted/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jennyd.info.Quoted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,10 +414,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Quoted/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jennyd.info.Quoted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -482,6 +489,7 @@
 				86A53B161CE96EEF00C5A4EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A53B171CE96EEF00C5A4EC /* Build configuration list for PBXNativeTarget "QuotedTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +498,7 @@
 				86A53B191CE96EEF00C5A4EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A53B1A1CE96EEF00C5A4EC /* Build configuration list for PBXNativeTarget "QuotedUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +507,7 @@
 				86A53B1C1CE96EEF00C5A4EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
