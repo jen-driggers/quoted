@@ -29,9 +29,9 @@ class ViewController: UIViewController {
     
     @IBAction func playButton(sender: UIButton) {
         
-        var randomNumber = Int(arc4random_uniform(16))
+        let randomNumber = Int(arc4random_uniform(16))
         
-        var imageName:String = self.quotesArray[randomNumber]
+        let imageName:String = self.quotesArray[randomNumber]
         
         self.quoteView.image = UIImage(named: imageName)
     }
