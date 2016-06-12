@@ -33,7 +33,31 @@ class ViewController: UIViewController {
          Quote(imageName: "thinking"),
          Quote(imageName: "voice"),
          Quote(imageName: "american"),
-         Quote(imageName: "good"),]
+         Quote(imageName: "good"),
+         Quote(imageName: "astro"),
+         Quote(imageName: "atlas"),
+         Quote(imageName: "blankets"),
+         Quote(imageName: "castle"),
+         Quote(imageName: "dhalgren"),
+         Quote(imageName: "dune"),
+         Quote(imageName: "ender"),
+         Quote(imageName: "flying"),
+         Quote(imageName: "geek"),
+         Quote(imageName: "gormenghast"),
+         Quote(imageName: "history"),
+         Quote(imageName: "ice"),
+         Quote(imageName: "jest"),
+         Quote(imageName: "justine"),
+         Quote(imageName: "killing"),
+         Quote(imageName: "margarita"),
+         Quote(imageName: "road"),
+         Quote(imageName: "saga"),
+         Quote(imageName: "spake"),
+         Quote(imageName: "speedboat"),
+         Quote(imageName: "stoner"),
+         Quote(imageName: "unbearable"),
+         Quote(imageName: "wallflower"),
+         Quote(imageName: "zen"),]
 
     override func viewDidLoad() {
         super.viewDidLoad()
