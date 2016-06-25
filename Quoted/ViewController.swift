@@ -101,11 +101,10 @@ class ViewController: UIViewController {
     
     
     //DON'T DELETE NEED TO FIGURE OUT HOW TO SAVE FAVORITE
-//    func saveFavorite(id: Int) {
-//        let appDelegate =
-//            UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let managedObjectContext = DataController().managedObjectContext
+    func saveFavorite(id: Int) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        let managedObjectContext = appDelegate.managedObjectContext
 //        // TODO: Obtain a NSManagedObjectContext instance...
 //        
 //        let entity =  NSEntityDescription.entityForName("Favorite",
@@ -122,7 +121,7 @@ class ViewController: UIViewController {
 //            print("Could not save \(error), \(error.userInfo)")
 //        }
 //        
-//    }
+    }
 
 }
 
