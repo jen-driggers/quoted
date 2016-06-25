@@ -102,19 +102,19 @@ class ViewController: UIViewController {
     
     //DON'T DELETE NEED TO FIGURE OUT HOW TO SAVE FAVORITE
     func saveFavorite(id: Int) {
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
         let managedContext = appDelegate.managedObjectContext
         
         // TODO: Obtain a NSManagedObjectContext instance...
 
-        let entity =  NSEntityDescription.entityForName("Favorite",
+        let entity =  NSEntityDescription.entityForName("Favorites",
                                                         inManagedObjectContext:managedContext)
         
-        print(entity)
         
-//        print(entity)
-//        
+        print(entity)
+//
 //        let favorite = NSManagedObject(entity: entity!,
 //                                     insertIntoManagedObjectContext: managedContext)
 //        
