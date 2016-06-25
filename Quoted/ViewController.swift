@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         favoritesButton.setTitle("Added to Favorites", forState: .Normal)
         
         //DON'T DELETE NEED TO FIGURE OUT HOW TO SAVE FAVORITE
-//        saveFavorite(currentQuote!.uid)
+        saveFavorite(currentQuote!.uid)
     }
     
     
@@ -104,23 +104,31 @@ class ViewController: UIViewController {
     func saveFavorite(id: Int) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
-        let managedObjectContext = appDelegate.managedObjectContext
-//        // TODO: Obtain a NSManagedObjectContext instance...
-//        
-//        let entity =  NSEntityDescription.entityForName("Favorite",
-//                                                        inManagedObjectContext:managedObjectContext)
+        let managedContext = appDelegate.managedObjectContext
+        
+        // TODO: Obtain a NSManagedObjectContext instance...
+
+        let entity =  NSEntityDescription.entityForName("Favorite",
+                                                        inManagedObjectContext:managedContext)
+        
+        print(entity)
+        
+//        print(entity)
 //        
 //        let favorite = NSManagedObject(entity: entity!,
-//                                     insertIntoManagedObjectContext: managedObjectContext)
+//                                     insertIntoManagedObjectContext: managedContext)
+//        
+//        print(favorite)
+//        
 //        
 //        
 //        do {
-//            try managedObjectContext.save()
+//            try managedContext.save()
 //            favorites.append(favorite)
 //        } catch let error as NSError  {
 //            print("Could not save \(error), \(error.userInfo)")
 //        }
-//        
+        
     }
 
 }
