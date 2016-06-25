@@ -11,17 +11,18 @@ import UIKit
 class Quote: NSObject {
     
     var imageName: String
-    let uid: Int
-    static var nextUid = 0
-    static func generateUid() -> Int {
-        nextUid += 1
-        return nextUid
-    }
+    var uid: Int
+//    static var nextUid = 0
+//    static func generateUid() -> Int {
+//        nextUid += 1
+//        return nextUid
+//    }
     
     
-    init(imageName: String) {
+    init(imageName: String, uid: Int) {
         self.imageName = imageName
-        self.uid = Quote.generateUid()
+        self.uid = uid
+//        self.uid = Quote.generateUid()
     }
 
 }
