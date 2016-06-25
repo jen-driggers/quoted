@@ -64,6 +64,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        switchToRandomQuote()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -73,7 +74,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playButton(sender: UIButton) {
-        
+        switchToRandomQuote()
+    }
+    
+    func switchToRandomQuote() {
         let randomNumber = Int(arc4random_uniform(UInt32(quotesArray.count)))
         
         currentQuote = quotesArray[randomNumber]
