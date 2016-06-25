@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Favorites: NSManagedObject {
+class Favorite: NSManagedObject {
 
     @NSManaged var quoteId: NSNumber?
 
