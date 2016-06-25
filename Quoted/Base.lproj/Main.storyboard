@@ -34,9 +34,20 @@
                                     <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="let-7q-RIp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx2-kk-BV3">
+                                <rect key="frame" x="20" y="447" width="140" height="30"/>
+                                <state key="normal" title="Add to favorites">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="favoriteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tx2-q9-aCD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="iMr-ic-Vbx" firstAttribute="top" secondItem="Gx2-kk-BV3" secondAttribute="bottom" constant="63" id="CYS-J5-blp"/>
+                            <constraint firstItem="Gx2-kk-BV3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Tpp-tN-O7D"/>
                             <constraint firstAttribute="bottom" secondItem="Onr-11-NIR" secondAttribute="bottom" id="Viw-7N-YL8"/>
                             <constraint firstItem="Onr-11-NIR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y83-RE-lCB"/>
                             <constraint firstAttribute="trailing" secondItem="iMr-ic-Vbx" secondAttribute="trailing" id="YdC-hg-JbX"/>
@@ -48,12 +59,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoritesButton" destination="Gx2-kk-BV3" id="IqZ-HZ-VHf"/>
                         <outlet property="quoteButton" destination="iMr-ic-Vbx" id="wWG-E6-yaV"/>
                         <outlet property="quoteView" destination="Onr-11-NIR" id="XKC-O6-5dX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="289" y="374"/>
         </scene>
     </scenes>
     <resources>

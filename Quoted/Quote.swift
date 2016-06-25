@@ -18,6 +18,7 @@ class Quote: NSObject {
         return nextUid
     }
     
+    
     init(imageName: String) {
         self.imageName = imageName
         self.uid = Quote.generateUid()

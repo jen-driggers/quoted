@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -15,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var quoteView: UIImageView!
     
-//    var quotesArray:[String] = ["grendel","catcher","design","stranger","alchemist","vendetta","watchmen","bfg","alice","grapes","naked","neuromancer","thinking","voice","american","good"]
+    @IBOutlet weak var favoritesButton: UIButton!
     
     var quotesArray =
         [Quote(imageName: "grendel"),
@@ -58,6 +59,8 @@ class ViewController: UIViewController {
          Quote(imageName: "unbearable"),
          Quote(imageName: "wallflower"),
          Quote(imageName: "zen"),]
+    var currentQuote : Quote? = nil
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +76,45 @@ class ViewController: UIViewController {
         
         let randomNumber = Int(arc4random_uniform(UInt32(quotesArray.count)))
         
-        let quote = quotesArray[randomNumber]
+        currentQuote = quotesArray[randomNumber]
         
-        quoteView.image = UIImage(named: quote.imageName)
+        quoteView.image = UIImage(named: currentQuote!.imageName)
+        
     }
+    
+    var favorites = [NSManagedObject]()
 
+    @IBAction func favoriteAction(sender: UIButton) {
+        
+        favoritesButton.setTitle("Added to Favorites", forState: .Normal)
+        
+        saveFavorite(currentQuote!.uid)
+    }
+    
+    func saveFavorite(id: Int) {
+    
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var managedObjectContext: NSManagedObjectContext?
+        
+        let entity =  NSEntityDescription.entityForName("Favorite",
+                                                        inManagedObjectContext:managedObjectContext!)
+        
+        let favorite = NSManagedObject(entity: entity!,
+                                     insertIntoManagedObjectContext: managedObjectContext)
+        
+//        favorite.setValue(id, forKey: "uid")
+        
+        
+        do {
+            try managedObjectContext!.save()
+            favorites.append(favorite)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+    }
 
 }
 
