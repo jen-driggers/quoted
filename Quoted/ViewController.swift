@@ -96,14 +96,14 @@ class ViewController: UIViewController {
     }
     
     func saveFavorite(id: Int) {
-    
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
+//        let appDelegate =
+//            UIApplication.sharedApplication().delegate as! AppDelegate
         
-        var managedObjectContext: NSManagedObjectContext?
+        let managedObjectContext = DataController().managedObjectContext
+        // TODO: Obtain a NSManagedObjectContext instance...
         
         let entity =  NSEntityDescription.entityForName("Favorite",
-                                                        inManagedObjectContext:managedObjectContext!)
+                                                        inManagedObjectContext:managedObjectContext)
         
         let favorite = NSManagedObject(entity: entity!,
                                      insertIntoManagedObjectContext: managedObjectContext)
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         
         
         do {
-            try managedObjectContext!.save()
+            try managedObjectContext.save()
             favorites.append(favorite)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
