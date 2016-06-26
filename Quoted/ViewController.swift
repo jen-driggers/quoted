@@ -134,16 +134,15 @@ class ViewController: UIViewController {
         do {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             
-            favorites = results as! [NSManagedObject]
+            print("these are all the quotes in results array")
             
-            for i in 0 ..< favorites.count {
+            for i in 0 ..< results.count {
                 
-                let counter = favorites[i] as NSManagedObject
+                let counter = results[i] as! NSManagedObject
                 
                 let quote = counter.valueForKey("quoteId")
                 
                 print("quote id is \(quote)")
-                
             }
 
             
