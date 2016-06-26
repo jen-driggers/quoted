@@ -8,7 +8,7 @@
         <!--Quotes-->
         <scene sceneID="Ee0-jH-Ldf">
             <objects>
-                <viewController id="iEs-Sh-pUU" sceneMemberID="viewController">
+                <viewController id="iEs-Sh-pUU" customClass="ViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="11J-qM-tgw"/>
                         <viewControllerLayoutGuide type="bottom" id="koA-gd-vKr"/>
@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="catcher" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-11-NIR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="catcher" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-11-NIR">
+                                <rect key="frame" x="0.0" y="-9" width="600" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-ic-Vbx">
-                                <rect key="frame" x="0.0" y="270" width="600" height="60"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-ic-Vbx">
+                                <rect key="frame" x="0.0" y="420" width="600" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BO0-ZG-wdf"/>
@@ -30,28 +30,47 @@
                                 <state key="normal" image="button">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playButton:" destination="iEs-Sh-pUU" eventType="touchUpInside" id="2Gl-hz-kUG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx2-kk-BV3">
-                                <rect key="frame" x="230" y="285" width="140" height="30"/>
-                                <state key="normal" title="Add to favorites">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-DL-Ko9">
+                                <rect key="frame" x="20" y="346" width="107" height="30"/>
+                                <state key="normal" title="add to favorites">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="favoriteAction:" destination="iEs-Sh-pUU" eventType="touchUpInside" id="KdT-SD-qsA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Onr-11-NIR" secondAttribute="bottom" constant="32" id="3Lq-cz-z3t"/>
+                            <constraint firstItem="Onr-11-NIR" firstAttribute="leading" secondItem="qHC-1O-ajo" secondAttribute="leading" id="7Dt-Fg-BpH"/>
+                            <constraint firstItem="koA-gd-vKr" firstAttribute="top" secondItem="iMr-ic-Vbx" secondAttribute="bottom" constant="71" id="9W1-ko-EOY"/>
+                            <constraint firstItem="iMr-ic-Vbx" firstAttribute="leading" secondItem="qHC-1O-ajo" secondAttribute="leading" id="aQ2-Di-biL"/>
+                            <constraint firstAttribute="trailing" secondItem="Onr-11-NIR" secondAttribute="trailing" id="fmi-K5-nmC"/>
+                            <constraint firstItem="Onr-11-NIR" firstAttribute="top" secondItem="qHC-1O-ajo" secondAttribute="top" id="kvT-0R-Vv4"/>
+                            <constraint firstAttribute="trailing" secondItem="iMr-ic-Vbx" secondAttribute="trailing" id="onV-cg-YWV"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quotes" id="44d-w9-iz7"/>
+                    <connections>
+                        <outlet property="favoritesButton" destination="vYC-DL-Ko9" id="ap6-R2-Dby"/>
+                        <outlet property="quoteButton" destination="iMr-ic-Vbx" id="ex3-bC-pKz"/>
+                        <outlet property="quoteView" destination="Onr-11-NIR" id="a8n-PS-6Wf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGV-qr-dhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="259" y="1377"/>
         </scene>
-        <!--Favorites-->
+        <!--Navigation Controller-->
         <scene sceneID="lA1-W9-QiO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="bRw-WA-4M7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Ttr-Pb-bDC"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Ttr-Pb-bDC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSZ-QM-k4p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,6 +79,7 @@
                         <segue destination="t6N-kN-Q5g" kind="relationship" relationship="rootViewController" id="2QR-XO-EYw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263" y="697"/>
         </scene>
@@ -107,6 +127,13 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3K-VO-b7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gx2-kk-BV3">
+                    <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Add to favorites">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </objects>
             <point key="canvasLocation" x="-561" y="1049"/>
         </scene>

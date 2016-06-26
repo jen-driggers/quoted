@@ -9,8 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UITableViewController {
-    
+class ViewController:  UIViewController {
     
     @IBOutlet weak var quoteButton: UIButton!
     
@@ -58,7 +57,7 @@ class ViewController: UITableViewController {
          Quote(imageName: "stoner", uid: 34),
          Quote(imageName: "unbearable", uid: 35),
          Quote(imageName: "wallflower", uid: 36),
-         Quote(imageName: "zen", uid: 37),]
+         Quote(imageName: "zen", uid: 37)]
     
     var currentQuote : Quote! = nil
 
@@ -67,6 +66,24 @@ class ViewController: UITableViewController {
         switchToRandomQuote()
     
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    func tableView(tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return favorites.count
+    }
+    
+    func tableView(tableView: UITableView,
+                   cellForRowAtIndexPath
+        indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell =
+            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
+        
+        //            cell!.textLabel!.text = names[indexPath.row]
+        
+        return cell!
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,24 +107,6 @@ class ViewController: UITableViewController {
     }
     
     var favorites = [NSManagedObject]()
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return favorites.count
-//    }
-//    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
-//        -> UITableViewCell {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("FavoritesCell", forIndexPath: indexPath)
-//                as! PlayerCell
-//            
-//            let favorite = favorites[indexPath.row] as Favorite
-//            cell.favorite = favorite
-//            return cell
-//    }
 
     @IBAction func favoriteAction(sender: UIButton) {
         
