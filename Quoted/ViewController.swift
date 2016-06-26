@@ -104,14 +104,16 @@ class ViewController:  UIViewController {
         
         print("current quote is \(currentQuote!.imageName), and the uid is \(currentQuote!.uid)");
         
+        // you will need a check here to see if the quote has been added to the favorites database, and update favoritesButton's title accordingly.
+        
     }
     
     var favorites = [NSManagedObject]()
 
     @IBAction func favoriteAction(sender: UIButton) {
-        
+        // We need to see if it's already in the favorites table.  If so, the title of favoritesButton should be set to "Add to Favorites" and if not then it should be set to "Remove from Favorites".  Similarly, we should add/remove as needed.  The title needs to match what the button will do if the user presses it again, not what we're doing right now.
         favoritesButton.setTitle("Added to Favorites", forState: .Normal)
-        
+                
         saveFavorite(currentQuote!.uid)
     }
     
