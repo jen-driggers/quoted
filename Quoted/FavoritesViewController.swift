@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     
     @IBOutlet weak var quoteButton: UIButton!
@@ -90,6 +90,24 @@ class ViewController: UIViewController {
     }
     
     var favorites = [NSManagedObject]()
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return favorites.count
+//    }
+//    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
+//        -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("FavoritesCell", forIndexPath: indexPath)
+//                as! PlayerCell
+//            
+//            let favorite = favorites[indexPath.row] as Favorite
+//            cell.favorite = favorite
+//            return cell
+//    }
 
     @IBAction func favoriteAction(sender: UIButton) {
         
