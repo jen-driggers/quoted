@@ -60,12 +60,12 @@ class ViewController: UIViewController {
          Quote(imageName: "wallflower", uid: 36),
          Quote(imageName: "zen", uid: 37),]
     
-    var currentQuote : Quote? = nil
-    
+    var currentQuote : Quote! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         switchToRandomQuote()
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         
         quoteView.image = UIImage(named: currentQuote!.imageName)
         
-        print("current quote is \(currentQuote!.imageName), and the id is \(currentQuote!.uid)");
+        print("current quote is \(currentQuote!.imageName), and the uid is \(currentQuote!.uid)");
         
     }
     
@@ -119,8 +119,6 @@ class ViewController: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
         
-        print(favorites)
-        
         fetchFavorites()
         
     }
@@ -138,26 +136,16 @@ class ViewController: UIViewController {
             
             favorites = results as! [NSManagedObject]
             
-            
             for i in 0 ..< favorites.count {
                 
-                let counter = favorites[i] as! NSManagedObject
+                let counter = favorites[i] as NSManagedObject
                 
                 let quote = counter.valueForKey("quoteId")
                 
-//                let quoteName = counter.valueForKey("imageName")
-                
-                print("quote name id is \(quote)")
+                print("quote id is \(quote)")
                 
             }
-//            
-//            if (result.count > 0) {
-//                let quote = result[0] as! NSManagedObject
-//                
-//                if let first = quote.valueForKey("quoteId") {
-//                    print("quote id is \(first)")
-//                }
-//            }
+
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
