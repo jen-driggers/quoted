@@ -112,14 +112,15 @@ class ViewController: UIViewController {
         let entity =  NSEntityDescription.entityForName("Favorites",
                                                         inManagedObjectContext:managedContext)
         
+        let favorite = NSManagedObject(entity: entity!,
+                                     insertIntoManagedObjectContext: managedContext)
+      
         
-        print(entity)
+        favorite.setValue(id, forKey: "quoteId")
+        
+    
+        print(favorite)
 //
-//        let favorite = NSManagedObject(entity: entity!,
-//                                     insertIntoManagedObjectContext: managedContext)
-//        
-//        print(favorite)
-//        
 //        
 //        
 //        do {
