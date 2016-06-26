@@ -95,19 +95,14 @@ class ViewController: UIViewController {
         
         favoritesButton.setTitle("Added to Favorites", forState: .Normal)
         
-        //DON'T DELETE NEED TO FIGURE OUT HOW TO SAVE FAVORITE
         saveFavorite(currentQuote!.uid)
     }
     
-    
-    //DON'T DELETE NEED TO FIGURE OUT HOW TO SAVE FAVORITE
     func saveFavorite(id: Int) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
         let managedContext = appDelegate.managedObjectContext
-        
-        // TODO: Obtain a NSManagedObjectContext instance...
 
         let entity =  NSEntityDescription.entityForName("Favorites",
                                                         inManagedObjectContext:managedContext)
@@ -115,22 +110,60 @@ class ViewController: UIViewController {
         let favorite = NSManagedObject(entity: entity!,
                                      insertIntoManagedObjectContext: managedContext)
       
-        
         favorite.setValue(id, forKey: "quoteId")
+
+        do {
+            try managedContext.save()
+            favorites.append(favorite)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
         
-    
-        print(favorite)
-//
-//        
-//        
-//        do {
-//            try managedContext.save()
-//            favorites.append(favorite)
-//        } catch let error as NSError  {
-//            print("Could not save \(error), \(error.userInfo)")
-//        }
+        print(favorites)
+        
+        fetchFavorites()
         
     }
+    
+    func fetchFavorites() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Favorites")
+        
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            
+            favorites = results as! [NSManagedObject]
+            
+            
+            for i in 0 ..< favorites.count {
+                
+                let counter = favorites[i] as! NSManagedObject
+                
+                let quote = counter.valueForKey("quoteId")
+                
+//                let quoteName = counter.valueForKey("imageName")
+                
+                print("quote name id is \(quote)")
+                
+            }
+//            
+//            if (result.count > 0) {
+//                let quote = result[0] as! NSManagedObject
+//                
+//                if let first = quote.valueForKey("quoteId") {
+//                    print("quote id is \(first)")
+//                }
+//            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+
 
 }
 
