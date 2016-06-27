@@ -11,9 +11,24 @@ import CoreData
 
 
 class Favorites: NSManagedObject {
+    
+    //TODO: figure out how to initialize this class with the Quote id
 
-// Insert code here to add functionality to your managed object subclass
+//    var id: Int
+//    
+//    init(id: Int) {
+//        self.id = id
+//    }
+//    
+//    required init(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    
+//    class func newInstance(id: Int, context: NSManagedObjectContext) -> Favorites {
+//        var favorites = NSEntityDescription.insertNewObjectForEntityForName("Favorites",
+//                                                                       inManagedObjectContext: context) as! Favorites
+//        favorites.id
+//        return favorites
+    //}
 
 }
