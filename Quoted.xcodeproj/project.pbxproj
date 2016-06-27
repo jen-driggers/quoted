@@ -11,8 +11,8 @@
 		865FDF361D0CA96200F12AC2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDF341D0CA96200F12AC2 /* Quote.swift */; };
 		865FDF371D0CA96200F12AC2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDF341D0CA96200F12AC2 /* Quote.swift */; };
 		8661A5DD1D209BFF006A2618 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */; };
-		867D62691D1F941800D60CE2 /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867D62671D1F941800D60CE2 /* Favorites+CoreDataProperties.swift */; };
-		867D626A1D1F941800D60CE2 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867D62681D1F941800D60CE2 /* Favorites.swift */; };
+		8661A5E31D20C367006A2618 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661A5E21D20C367006A2618 /* Favorites.swift */; };
+		8661A5E51D20C37A006A2618 /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661A5E41D20C37A006A2618 /* Favorites+CoreDataProperties.swift */; };
 		869A8EE21D20815900167116 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A8EE11D20815900167116 /* FavoritesCell.swift */; };
 		86A53AF01CE96EEF00C5A4EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A53AEF1CE96EEF00C5A4EC /* AppDelegate.swift */; };
 		86A53AF21CE96EEF00C5A4EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A53AF11CE96EEF00C5A4EC /* ViewController.swift */; };
@@ -46,8 +46,8 @@
 /* Begin PBXFileReference section */
 		865FDF341D0CA96200F12AC2 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
-		867D62671D1F941800D60CE2 /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		867D62681D1F941800D60CE2 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		8661A5E21D20C367006A2618 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		8661A5E41D20C37A006A2618 /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		869A8EE11D20815900167116 /* FavoritesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		86A53AEC1CE96EEF00C5A4EC /* Quoted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quoted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A53AEF1CE96EEF00C5A4EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		86A53AE31CE96EEF00C5A4EC = {
 			isa = PBXGroup;
 			children = (
-				867D62671D1F941800D60CE2 /* Favorites+CoreDataProperties.swift */,
-				867D62681D1F941800D60CE2 /* Favorites.swift */,
+				8661A5E21D20C367006A2618 /* Favorites.swift */,
+				8661A5E41D20C37A006A2618 /* Favorites+CoreDataProperties.swift */,
 				86A53AEE1CE96EEF00C5A4EC /* Quoted */,
 				86A53B031CE96EEF00C5A4EC /* QuotedTests */,
 				86A53B0E1CE96EEF00C5A4EC /* QuotedUITests */,
@@ -281,12 +281,12 @@
 			files = (
 				86A53AF21CE96EEF00C5A4EC /* ViewController.swift in Sources */,
 				869A8EE21D20815900167116 /* FavoritesCell.swift in Sources */,
-				867D62691D1F941800D60CE2 /* Favorites+CoreDataProperties.swift in Sources */,
 				8661A5DD1D209BFF006A2618 /* FavoritesTableViewController.swift in Sources */,
 				865FDF351D0CA96200F12AC2 /* Quote.swift in Sources */,
-				867D626A1D1F941800D60CE2 /* Favorites.swift in Sources */,
+				8661A5E31D20C367006A2618 /* Favorites.swift in Sources */,
 				86A53AF01CE96EEF00C5A4EC /* AppDelegate.swift in Sources */,
 				86F9DCAD1D1F4B140017A493 /* Quoted.xcdatamodeld in Sources */,
+				8661A5E51D20C37A006A2618 /* Favorites+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

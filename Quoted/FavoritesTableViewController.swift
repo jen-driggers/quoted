@@ -39,20 +39,29 @@ class FavoritesTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return favorites.count
     }
+    
+//    var quotesArray = [Quote(imageName: "grendel", uid: 1),
+//                       Quote(imageName: "catcher", uid: 2),
+//                       Quote(imageName: "design", uid: 3)]
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell =
-            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
-        
-        let favorite = favorites[indexPath.row]
-        
-        cell!.textLabel!.text =
-            favorite.valueForKey("quoteId") as? String
-
-        return cell!
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+////        let cell =
+////            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
+////        
+////        let favorite = favorites[indexPath.row]
+////        
+////        cell!.textLabel!.text =
+////            favorite.valueForKey("imageName") as? String
+//        
+////        let quote = quotesArray[indexPath.row]
+////        
+////        cell!.textLabel!.text =
+////        quote.valueForKey("imageName") as? String
+//
+////        return cell!
+//    }
  
 
     /*
