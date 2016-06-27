@@ -68,23 +68,6 @@ class ViewController:  UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
     }
-    
-    func tableView(tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
-    }
-    
-    func tableView(tableView: UITableView,
-                   cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell =
-            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
-        
-        //            cell!.textLabel!.text = names[indexPath.row]
-        
-        return cell!
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

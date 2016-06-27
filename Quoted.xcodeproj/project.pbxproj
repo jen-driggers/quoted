@@ -10,6 +10,7 @@
 		865FDF351D0CA96200F12AC2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDF341D0CA96200F12AC2 /* Quote.swift */; };
 		865FDF361D0CA96200F12AC2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDF341D0CA96200F12AC2 /* Quote.swift */; };
 		865FDF371D0CA96200F12AC2 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865FDF341D0CA96200F12AC2 /* Quote.swift */; };
+		8661A5DD1D209BFF006A2618 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */; };
 		867D62691D1F941800D60CE2 /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867D62671D1F941800D60CE2 /* Favorites+CoreDataProperties.swift */; };
 		867D626A1D1F941800D60CE2 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867D62681D1F941800D60CE2 /* Favorites.swift */; };
 		869A8EE21D20815900167116 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A8EE11D20815900167116 /* FavoritesCell.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		865FDF341D0CA96200F12AC2 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		867D62671D1F941800D60CE2 /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		867D62681D1F941800D60CE2 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		869A8EE11D20815900167116 /* FavoritesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				86A53AF11CE96EEF00C5A4EC /* ViewController.swift */,
 				865FDF341D0CA96200F12AC2 /* Quote.swift */,
 				869A8EE11D20815900167116 /* FavoritesCell.swift */,
+				8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */,
 				86F9DCAB1D1F4B140017A493 /* Quoted.xcdatamodeld */,
 				86A53AF31CE96EEF00C5A4EC /* Main.storyboard */,
 				86A53AF61CE96EEF00C5A4EC /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				86A53AF21CE96EEF00C5A4EC /* ViewController.swift in Sources */,
 				869A8EE21D20815900167116 /* FavoritesCell.swift in Sources */,
 				867D62691D1F941800D60CE2 /* Favorites+CoreDataProperties.swift in Sources */,
+				8661A5DD1D209BFF006A2618 /* FavoritesTableViewController.swift in Sources */,
 				865FDF351D0CA96200F12AC2 /* Quote.swift in Sources */,
 				867D626A1D1F941800D60CE2 /* Favorites.swift in Sources */,
 				86A53AF01CE96EEF00C5A4EC /* AppDelegate.swift in Sources */,

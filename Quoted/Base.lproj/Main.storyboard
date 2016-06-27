@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="263" y="697"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favorites Table View Controller-->
         <scene sceneID="tZl-63-hKz">
             <objects>
-                <tableViewController id="t6N-kN-Q5g" sceneMemberID="viewController">
+                <tableViewController id="t6N-kN-Q5g" customClass="FavoritesTableViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="649-4k-29n">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
