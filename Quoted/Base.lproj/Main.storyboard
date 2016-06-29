@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="catcher" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-11-NIR">
-                                <rect key="frame" x="0.0" y="-9" width="600" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catcher" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-11-NIR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-ic-Vbx">
                                 <rect key="frame" x="0.0" y="420" width="600" height="60"/>
@@ -34,8 +34,11 @@
                                     <action selector="playButton:" destination="iEs-Sh-pUU" eventType="touchUpInside" id="2Gl-hz-kUG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-DL-Ko9">
-                                <rect key="frame" x="20" y="346" width="107" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYC-DL-Ko9">
+                                <rect key="frame" x="20" y="368" width="241" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="tgk-8U-k3R"/>
+                                </constraints>
                                 <state key="normal" title="add to favorites">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -47,8 +50,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Onr-11-NIR" secondAttribute="bottom" constant="32" id="3Lq-cz-z3t"/>
+                            <constraint firstItem="vYC-DL-Ko9" firstAttribute="leading" secondItem="qHC-1O-ajo" secondAttribute="leading" constant="20" id="3fi-bg-4NS"/>
                             <constraint firstItem="Onr-11-NIR" firstAttribute="leading" secondItem="qHC-1O-ajo" secondAttribute="leading" id="7Dt-Fg-BpH"/>
                             <constraint firstItem="koA-gd-vKr" firstAttribute="top" secondItem="iMr-ic-Vbx" secondAttribute="bottom" constant="71" id="9W1-ko-EOY"/>
+                            <constraint firstItem="iMr-ic-Vbx" firstAttribute="top" secondItem="vYC-DL-Ko9" secondAttribute="bottom" constant="22" id="JeB-jV-evY"/>
                             <constraint firstItem="iMr-ic-Vbx" firstAttribute="leading" secondItem="qHC-1O-ajo" secondAttribute="leading" id="aQ2-Di-biL"/>
                             <constraint firstAttribute="trailing" secondItem="Onr-11-NIR" secondAttribute="trailing" id="fmi-K5-nmC"/>
                             <constraint firstItem="Onr-11-NIR" firstAttribute="top" secondItem="qHC-1O-ajo" secondAttribute="top" id="kvT-0R-Vv4"/>
@@ -103,7 +108,7 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

@@ -65,14 +65,11 @@ class ViewController:  UIViewController {
         super.viewDidLoad()
         
         switchToRandomQuote()
-    
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func playButton(sender: UIButton) {
@@ -88,21 +85,35 @@ class ViewController:  UIViewController {
         
         print("current quote is \(currentQuote!.imageName), and the uid is \(currentQuote!.uid)");
         
+        do {
+            if try isQuoteFavorited(currentQuote!.uid) {
+                favoritesButton.setTitle("delete favorite", forState: .Normal)
+            } else {
+                favoritesButton.setTitle("add to favorites", forState: .Normal)
+            }
+            
+        } catch {
+        }
         
     }
     
     var favorites = [NSManagedObject]()
 
     @IBAction func favoriteAction(sender: UIButton) {
-        // We need to see if it's already in the favorites table.  If so, the title of favoritesButton should be set to "Add to Favorites" and if not then it should be set to "Remove from Favorites".  Similarly, we should add/remove as needed.  The title needs to match what the button will do if the user presses it again, not what we're doing right now.
         
-        //favoritesButton.setTitle("Added to Favorites", forState: .Normal)
-                
-        saveFavorite(currentQuote!.uid)
-        
-        fetchFavorites()
+        do {
+            if try isQuoteFavorited(currentQuote.uid) {
+                favoritesButton.setTitle("delete favorite", forState: .Normal)
+            } else {
+                saveFavorite(currentQuote.uid)
+                favoritesButton.setTitle("add to favorites", forState: .Normal)
+            }
+            
+        } catch {
+        }
         
     }
+    
     
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -122,6 +133,8 @@ class ViewController:  UIViewController {
                                      insertIntoManagedObjectContext: managedContext)
       
         favorite.setValue(id, forKey: "quoteId")
+        
+        print("the quote that is being saved is \(favorite)")
 
         do {
             try managedContext.save()
@@ -129,8 +142,6 @@ class ViewController:  UIViewController {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-        
-//        fetchFavorites()
         
     }
     
@@ -142,62 +153,11 @@ class ViewController:  UIViewController {
         fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
         
         let results = try managedContext.executeFetchRequest(fetch)
-        return results.count == 1
-    }
-    
-    func fetchFavorites() {
-        
-        print("fetchFavorites was called")
-        
-//        let managedContext = getContext()
-        
-//        let fetchRequest = NSFetchRequest(entityName: "Favorites")
-        
-//        do {
-//            let results = try managedContext.executeFetchRequest(fetchRequest)
-//            
-//            print("these are all the quotes in results array")
-//            
-//            for i in 0 ..< results.count {
-//                
-//                let counter = results[i] as! NSManagedObject
-//                
-//                let quote = counter.valueForKey("quoteId")
-//                
-//                let quoteNS = quote as? NSNumber
-//                
-//                let quoteNumber = quoteNS as? Int
-//                
-//                print("quoteNumber is \(quoteNumber)")
-//                
-//                updateFavorites(quoteNumber!)
-//                
-//                print("quote id is \(quote)")
-//            }
-//
-//            
-//        } catch let error as NSError {
-//            print("Could not fetch \(error), \(error.userInfo)")
-//        }
+        print("results are \(results)")
+        return results.count > 0
         
     }
     
-    func updateFavorites(quoteNumber: Int) -> Int {
-         print("quote value is \(quoteNumber)")
-        
-        if (quoteNumber == currentQuote.uid) {
-            saveFavorite(quoteNumber)
-            favoritesButton.setTitle("Added to Favorites", forState: .Normal)
-            print("quote value is \(quoteNumber)")
-        } else {
-            favoritesButton.setTitle("Removed from Favorites", forState: .Normal)
-            print("I'm not saving it")
-        }
-        
-        return quoteNumber
-        
-    }
-
-
+    
 }
 
