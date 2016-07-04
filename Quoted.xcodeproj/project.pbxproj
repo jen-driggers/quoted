@@ -21,6 +21,7 @@
 		86A53B101CE96EEF00C5A4EC /* QuotedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A53B0F1CE96EEF00C5A4EC /* QuotedUITests.swift */; };
 		86BD0B411D2A05AB00C0F27E /* Favorites+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD0B3F1D2A05AB00C0F27E /* Favorites+CoreDataProperties.swift */; };
 		86BD0B421D2A05AB00C0F27E /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD0B401D2A05AB00C0F27E /* Favorites.swift */; };
+		86BD0B461D2A2F3600C0F27E /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD0B451D2A2F3600C0F27E /* TestDataSource.swift */; };
 		86F9DC6C1D1DF5680017A493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A53AEF1CE96EEF00C5A4EC /* AppDelegate.swift */; };
 		86F9DC6D1D1DF5690017A493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A53AEF1CE96EEF00C5A4EC /* AppDelegate.swift */; };
 		86F9DCAD1D1F4B140017A493 /* Quoted.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86F9DCAB1D1F4B140017A493 /* Quoted.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 		86A53B111CE96EEF00C5A4EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86BD0B3F1D2A05AB00C0F27E /* Favorites+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Favorites+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86BD0B401D2A05AB00C0F27E /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		86BD0B451D2A2F3600C0F27E /* TestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataSource.swift; sourceTree = "<group>"; };
 		86F9DCAC1D1F4B140017A493 /* Quoted.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quoted.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		86A53AE31CE96EEF00C5A4EC = {
 			isa = PBXGroup;
 			children = (
+				86BD0B451D2A2F3600C0F27E /* TestDataSource.swift */,
 				86A53AEE1CE96EEF00C5A4EC /* Quoted */,
 				86A53B031CE96EEF00C5A4EC /* QuotedTests */,
 				86A53B0E1CE96EEF00C5A4EC /* QuotedUITests */,
@@ -287,6 +290,7 @@
 				86BD0B421D2A05AB00C0F27E /* Favorites.swift in Sources */,
 				86A53AF01CE96EEF00C5A4EC /* AppDelegate.swift in Sources */,
 				86F9DCAD1D1F4B140017A493 /* Quoted.xcdatamodeld in Sources */,
+				86BD0B461D2A2F3600C0F27E /* TestDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,10 +70,10 @@ class FavoritesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -84,22 +84,22 @@ class FavoritesTableViewController: UITableViewController {
         
         // return 3
         
-        return recordsArray.count
+        return 1
+        
+//        return recordsArray.count
         
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell =
-            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
-        
-        cell!.textLabel?.text = "test" // this works to show test text
-        
-        
-        
-        return cell!
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        let cell =
+//            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
+//        
+//        cell!.textLabel?.text = "test" // this works to show test text
+//        
+//        return cell!
+//    }
     
  
 
