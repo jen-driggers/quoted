@@ -158,7 +158,6 @@ class ViewController:  UIViewController {
         fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
         
         let results = try managedContext.executeFetchRequest(fetch)
-        print("results are \(results)")
         return results.count > 0
         
     }
