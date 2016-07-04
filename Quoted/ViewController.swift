@@ -17,6 +17,8 @@ class ViewController:  UIViewController {
     
     @IBOutlet weak var favoritesButton: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var quotesArray =
         [Quote(imageName: "grendel", uid: 1),
          Quote(imageName: "catcher", uid: 2),
@@ -63,6 +65,8 @@ class ViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("i'm in the view controller, favorites are \(favorites)")
         
         switchToRandomQuote()
         

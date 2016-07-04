@@ -14,12 +14,12 @@ class Favorites: NSManagedObject {
     
     //TODO: figure out how to initialize this class with the Quote id
 
-//    var id: Int
+//    var id: NSInteger?
 //    
-//    init(id: Int) {
+//    init(id: NSInteger?) {
 //        self.id = id
 //    }
-//    
+    
 //    required init(coder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }

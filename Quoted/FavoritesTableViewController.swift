@@ -11,10 +11,16 @@ import CoreData
 
 class FavoritesTableViewController: UITableViewController {
     
+    @IBOutlet var FavoritesTableView: UITableView!
+    
     var favorites = [NSManagedObject]()
+    
+//    var favorites = [Favorites]() //creates empty array
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("tell me what my favorites are \(favorites)") // shows empty array
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,31 +43,26 @@ class FavoritesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return favorites.count
+        
+//        print("the number of favorites there are is \(favorites.count)") // returns 0
+        
+//        return favorites.count
+        
+        return 3
+        
     }
-    
-//    var quotesArray = [Quote(imageName: "grendel", uid: 1),
-//                       Quote(imageName: "catcher", uid: 2),
-//                       Quote(imageName: "design", uid: 3)]
 
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-////        let cell =
-////            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
-////        
-////        let favorite = favorites[indexPath.row]
-////        
-////        cell!.textLabel!.text =
-////            favorite.valueForKey("imageName") as? String
-//        
-////        let quote = quotesArray[indexPath.row]
-////        
-////        cell!.textLabel!.text =
-////        quote.valueForKey("imageName") as? String
-//
-////        return cell!
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell =
+            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
+        
+        cell!.textLabel?.text = "test" // this works to show test text
+        
+        return cell!
+    }
+    
  
 
     /*
@@ -108,5 +109,6 @@ class FavoritesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
 }

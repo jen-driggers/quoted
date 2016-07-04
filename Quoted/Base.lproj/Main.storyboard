@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="259" y="1377"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorites Navigation Controller View Controller-->
         <scene sceneID="lA1-W9-QiO">
             <objects>
-                <navigationController id="bRw-WA-4M7" sceneMemberID="viewController">
+                <navigationController id="bRw-WA-4M7" customClass="FavoritesNavigationControllerViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Ttr-Pb-bDC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSZ-QM-k4p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="263" y="697"/>
         </scene>
-        <!--Favorites Table View Controller-->
+        <!--Favorites-->
         <scene sceneID="tZl-63-hKz">
             <objects>
                 <tableViewController id="t6N-kN-Q5g" customClass="FavoritesTableViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,11 +116,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="t6N-kN-Q5g" id="lo7-d1-HGe"/>
-                            <outlet property="delegate" destination="t6N-kN-Q5g" id="lwb-1C-Z8W"/>
+                            <outlet property="dataSource" destination="t6N-kN-Q5g" id="oef-nb-hjp"/>
+                            <outlet property="delegate" destination="t6N-kN-Q5g" id="p2c-gM-pBN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="EHO-Nt-3cz"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="EHO-Nt-3cz" userLabel="Quotes"/>
+                    <connections>
+                        <outlet property="FavoritesTableView" destination="649-4k-29n" id="lPw-n0-XDn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyl-aj-023" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,13 +144,6 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3K-VO-b7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gx2-kk-BV3">
-                    <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Add to favorites">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
             </objects>
             <point key="canvasLocation" x="-561" y="1049"/>
         </scene>
