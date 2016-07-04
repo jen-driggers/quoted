@@ -86,8 +86,10 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         
         let record = fetchedResultsController.objectAtIndexPath(indexPath)
         
-        if let quoteId = record.valueForKey("quoteId") as? String {
-            cell.textLabel!.text = quoteId
+       // cell.textLabel!.text = "hello i'm here"
+        
+        if let stringValue = record.valueForKey("stringValue") as? String {
+            cell.textLabel!.text = stringValue
         }
         
     }

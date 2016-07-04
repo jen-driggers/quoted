@@ -14,6 +14,19 @@ class Favorites: NSManagedObject {
     
     var areFavorites = []
     
+// JON'S EXAMPLES ON TWO WAYS TO ASSIGN PROPERTIES TO CLASS
+    
+//    var someVariable : SomeType
+    
+//    var someVariable : SomeType = someValue
+    
+    var stringValue : String {
+        get {
+            return String(quoteId!)
+        }
+    }
+//    var stringValue = String(quoteId)
+    
     //TODO: figure out how to initialize this class with the Quote id
 
 //    var id: NSInteger?
