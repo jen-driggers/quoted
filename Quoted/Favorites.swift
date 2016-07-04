@@ -12,6 +12,7 @@ import CoreData
 
 class Favorites: NSManagedObject {
     
+    
     //TODO: figure out how to initialize this class with the Quote id
 
 //    var id: NSInteger?

@@ -66,8 +66,6 @@ class ViewController:  UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("i'm in the view controller, favorites are \(favorites)")
-        
         switchToRandomQuote()
         
     }
@@ -138,6 +136,8 @@ class ViewController:  UIViewController {
                                      insertIntoManagedObjectContext: managedContext)
       
         favorite.setValue(id, forKey: "quoteId")
+        
+        print("what is favorite \(favorite)")
         
         print("the quote that is being saved is \(favorite)")
 

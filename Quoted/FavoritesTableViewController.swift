@@ -15,18 +15,52 @@ class FavoritesTableViewController: UITableViewController {
     
     var favorites = [NSManagedObject]()
     
+    func getContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.managedObjectContext
+    }
+    
 //    var favorites = [Favorites]() //creates empty array
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("tell me what my favorites are \(favorites)") // shows empty array
+        loadMyRecords()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    var recordsArray: [AnyObject] = []
+    
+    func loadMyRecords() {
+        
+        //        print("tell me what my favorites are \(favorites)") // shows empty array
+        
+        let myContext = getContext()
+        
+        // Create Entity
+        let entity =  NSEntityDescription.entityForName("Favorites",
+                                                        inManagedObjectContext:myContext)
+        
+        // Initialize Record
+        let record = NSManagedObject(entity: entity!,
+                                     insertIntoManagedObjectContext: myContext)
+        
+        print("what is records \(record)")
+        
+        let recordId = record.valueForKey("quoteId")
+        
+        print("what is my record id \(recordId)")
+        
+        recordsArray.append(recordId!)
+    
+        
+//        return recordId
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +82,9 @@ class FavoritesTableViewController: UITableViewController {
         
 //        return favorites.count
         
-        return 3
+        // return 3
+        
+        return recordsArray.count
         
     }
 
@@ -59,6 +95,8 @@ class FavoritesTableViewController: UITableViewController {
             tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
         
         cell!.textLabel?.text = "test" // this works to show test text
+        
+        
         
         return cell!
     }
