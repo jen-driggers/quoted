@@ -69,11 +69,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGV-qr-dhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="1385"/>
+            <point key="canvasLocation" x="263" y="729"/>
         </scene>
         <!--Favorites Navigation Controller View Controller-->
         <scene sceneID="lA1-W9-QiO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="bRw-WA-4M7" customClass="FavoritesNavigationControllerViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Ttr-Pb-bDC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSZ-QM-k4p">
@@ -84,9 +85,8 @@
                         <segue destination="t6N-kN-Q5g" kind="relationship" relationship="rootViewController" id="2QR-XO-EYw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="697"/>
+            <point key="canvasLocation" x="263" y="1461"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="tZl-63-hKz">
@@ -127,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyl-aj-023" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="697"/>
+            <point key="canvasLocation" x="991" y="1461"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sEV-yZ-ruP">
@@ -139,8 +139,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iEs-Sh-pUU" kind="relationship" relationship="viewControllers" id="eJ3-Lq-qvT"/>
-                        <segue destination="bRw-WA-4M7" kind="relationship" relationship="viewControllers" id="YJT-zX-yED"/>
+                        <segue destination="iEs-Sh-pUU" kind="relationship" relationship="viewControllers" id="450-PH-ygV"/>
+                        <segue destination="bRw-WA-4M7" kind="relationship" relationship="viewControllers" id="ge3-f8-arV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3K-VO-b7g" userLabel="First Responder" sceneMemberID="firstResponder"/>

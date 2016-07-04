@@ -11,6 +11,8 @@ import CoreData
 
 class ViewController:  UIViewController {
     
+    // go back to code.tutsplus.com/tutorials/ios-from-scratch-with-swift-exploring-tab-bar-controller--cms-25470 to initialize tabs in view controllers
+    
     @IBOutlet weak var quoteButton: UIButton!
     
     @IBOutlet weak var quoteView: UIImageView!
