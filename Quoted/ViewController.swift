@@ -108,6 +108,7 @@ class ViewController:  UIViewController {
         do {
             if try isQuoteFavorited(currentQuote.uid) {
                 favoritesButton.setTitle("delete favorite", forState: .Normal)
+                print("i was clicked")
             } else {
                 saveFavorite(currentQuote.uid)
                 favoritesButton.setTitle("add to favorites", forState: .Normal)

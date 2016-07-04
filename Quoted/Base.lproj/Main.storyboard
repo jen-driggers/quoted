@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="favoriteAction:" destination="iEs-Sh-pUU" eventType="touchUpInside" id="KdT-SD-qsA"/>
+                                    <action selector="favoriteAction:" destination="iEs-Sh-pUU" eventType="touchUpInside" id="t2d-vp-NBJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGV-qr-dhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="1377"/>
+            <point key="canvasLocation" x="269" y="1385"/>
         </scene>
         <!--Favorites Navigation Controller View Controller-->
         <scene sceneID="lA1-W9-QiO">
