@@ -56,8 +56,6 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    var recordsArray: [AnyObject] = []
 
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
@@ -83,21 +81,6 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         
         return 0
     }
-
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        
-////        print("the number of favorites there are is \(favorites.count)") // returns 0
-//        
-////        return favorites.count
-//        
-//        // return 3
-//        
-//        return 1
-//        
-////        return recordsArray.count
-//        
-//    }
     
     func configureCell(cell: FavoritesCell, atIndexPath indexPath: NSIndexPath) {
         
@@ -118,19 +101,7 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
          return cell
         
     }
-
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        let cell =
-//            tableView.dequeueReusableCellWithIdentifier("FavoritesCell")
-//        
-//        cell!.textLabel?.text = "test" // this works to show test text
-//        
-//        return cell!
-//    }
-    
- 
 
     /*
     // Override to support conditional editing of the table view.
@@ -176,33 +147,5 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    // OLD METHOD FOR LOADING RECORDS DON'T DELETE UNTIL YOU CAN USE NSFETCHEDCONTROLLER SUCCESSFULLY
-    
-    //    func loadMyRecords() {
-    //
-    ////        let myContext = managedObjectContext
-    //
-    //        // Create Entity
-    //        let entity =  NSEntityDescription.entityForName("Favorites",
-    //                                                        inManagedObjectContext:managedObjectContext!)
-    //
-    //        // Initialize Record
-    //        let record = NSManagedObject(entity: entity!,
-    //                                     insertIntoManagedObjectContext:managedObjectContext!)
-    //
-    //        print("what is records \(record)")
-    //
-    //        let recordId = record.valueForKey("quoteId")
-    //
-    //        print("what is my record id \(recordId)")
-    //
-    //        recordsArray.append(recordId!)
-    //    
-    //        
-    ////        return recordId
-    //        
-    //    }
     
 }
