@@ -9,84 +9,113 @@
 import UIKit
 import CoreData
 
-class FavoritesTableViewController: UITableViewController {
+class FavoritesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var FavoritesTableView: UITableView!
     
     var favorites = [NSManagedObject]()
+    
+    var managedObjectContext: NSManagedObjectContext!
+    
+    let ReuseIdentifierToDoCell = "FavoritesCell"
     
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }
     
-//    var favorites = [Favorites]() //creates empty array
-
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Favorites")
+        
+        let sortDescriptor = NSSortDescriptor(key: "quoteId", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.getContext(), sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        
+        return fetchedResultsController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadMyRecords()
-
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
+        
+        //        loadMyRecords()
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     var recordsArray: [AnyObject] = []
-    
-    func loadMyRecords() {
-        
-        //        print("tell me what my favorites are \(favorites)") // shows empty array
-        
-        let myContext = getContext()
-        
-        // Create Entity
-        let entity =  NSEntityDescription.entityForName("Favorites",
-                                                        inManagedObjectContext:myContext)
-        
-        // Initialize Record
-        let record = NSManagedObject(entity: entity!,
-                                     insertIntoManagedObjectContext: myContext)
-        
-        print("what is records \(record)")
-        
-        let recordId = record.valueForKey("quoteId")
-        
-        print("what is my record id \(recordId)")
-        
-        recordsArray.append(recordId!)
-    
-        
-//        return recordId
-        
-    }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        if let sections = fetchedResultsController.sections {
+            return sections.count
+        }
+        
+        return 0
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if let sections = fetchedResultsController.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
         
-//        print("the number of favorites there are is \(favorites.count)") // returns 0
+        return 0
+    }
+
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        
+////        print("the number of favorites there are is \(favorites.count)") // returns 0
+//        
+////        return favorites.count
+//        
+//        // return 3
+//        
+//        return 1
+//        
+////        return recordsArray.count
+//        
+//    }
+    
+    func configureCell(cell: FavoritesCell, atIndexPath indexPath: NSIndexPath) {
         
-//        return favorites.count
+        let record = fetchedResultsController.objectAtIndexPath(indexPath)
         
-        // return 3
+        if let quoteId = record.valueForKey("quoteId") as? String {
+            cell.textLabel!.text = quoteId
+        }
         
-        return 1
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        return recordsArray.count
+         let cell = tableView.dequeueReusableCellWithIdentifier(ReuseIdentifierToDoCell, forIndexPath: indexPath) as! FavoritesCell
+        
+         configureCell(cell, atIndexPath: indexPath)
+        
+         return cell
         
     }
 
@@ -148,5 +177,32 @@ class FavoritesTableViewController: UITableViewController {
     }
     */
     
+    
+    // OLD METHOD FOR LOADING RECORDS DON'T DELETE UNTIL YOU CAN USE NSFETCHEDCONTROLLER SUCCESSFULLY
+    
+    //    func loadMyRecords() {
+    //
+    ////        let myContext = managedObjectContext
+    //
+    //        // Create Entity
+    //        let entity =  NSEntityDescription.entityForName("Favorites",
+    //                                                        inManagedObjectContext:managedObjectContext!)
+    //
+    //        // Initialize Record
+    //        let record = NSManagedObject(entity: entity!,
+    //                                     insertIntoManagedObjectContext:managedObjectContext!)
+    //
+    //        print("what is records \(record)")
+    //
+    //        let recordId = record.valueForKey("quoteId")
+    //
+    //        print("what is my record id \(recordId)")
+    //
+    //        recordsArray.append(recordId!)
+    //    
+    //        
+    ////        return recordId
+    //        
+    //    }
     
 }
