@@ -123,6 +123,8 @@ class ViewController:  UIViewController {
         return appDelegate.managedObjectContext
     }
     
+    // this code will need to be moved to the favorites class somehow
+    
     func saveFavorite(id: Int) {
         
         let managedContext = getContext()

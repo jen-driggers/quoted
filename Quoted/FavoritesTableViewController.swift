@@ -11,6 +11,8 @@ import CoreData
 
 class FavoritesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    //TODO: the table view isn't updating with added favorites
+    
     @IBOutlet var FavoritesTableView: UITableView!
     
     var favorites = [NSManagedObject]()
