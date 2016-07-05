@@ -14,9 +14,9 @@ class Favorites: NSManagedObject {
     
     var areFavorites = []
     
-// I need to add logic to save and delete favorites here
-    
-// do i need to create a subclass of favorites for the current quote? (or random quote) (or current favorite)
+    func addToFavorites() {
+        print("i was called from view controller")
+    }
     
 // JON'S EXAMPLES ON TWO WAYS TO ASSIGN PROPERTIES TO CLASS
     
