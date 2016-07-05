@@ -12,11 +12,15 @@ import CoreData
 
 class Favorites: NSManagedObject {
     
-    var areFavorites = []
+    var areFavorites: [Int] = []
     
-    func addToFavorites() {
+    func addToFavorites(id: Int) {
         print("i was called from view controller")
+        areFavorites.append(id)
+        
+        // will need to replace this with actual quantity of favorites from database
     }
+    
     
 // JON'S EXAMPLES ON TWO WAYS TO ASSIGN PROPERTIES TO CLASS
     

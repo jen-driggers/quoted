@@ -83,11 +83,13 @@ class ViewController:  UIViewController {
             } else {
 //                saveFavorite(currentQuote.uid)
                 favoritesButton.setTitle("add to favorites", forState: .Normal)
-                favorites.addToFavorites()
+                favorites.addToFavorites(currentQuote.uid)
             }
             
         } catch {
         }
+        
+        print("the number of favorites is \(favorites.areFavorites.count)")
         
     }
     
