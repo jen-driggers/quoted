@@ -13,10 +13,20 @@ class Quote: NSObject {
     var imageName: String
     var uid: Int
     
+    
     init(imageName: String, uid: Int) {
         self.imageName = imageName
         self.uid = uid
     }
+    
+//    let quotes = quotesArray
+    
+//    var quotes:[Quote] = quotesArray
+    
+//    var quotes = QuoteSamples.quotesArray
+    
+//    var randomNumber = Int(arc4random_uniform(UInt32(quotesArray.count)))
+    
 
 }
 

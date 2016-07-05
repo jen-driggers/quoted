@@ -8,7 +8,6 @@
 
 import UIKit
 
-
     
     var quotesArray =
         [Quote(imageName: "grendel", uid: 1),
@@ -34,22 +33,22 @@ import UIKit
          Quote(imageName: "dhalgren", uid: 21),
          Quote(imageName: "dune", uid: 22),
          Quote(imageName: "ender", uid: 23),
-         Quote(imageName: "flying", uid: 23),
-         Quote(imageName: "geek", uid: 24),
-         Quote(imageName: "gormenghast", uid: 25),
-         Quote(imageName: "history", uid: 25),
-         Quote(imageName: "ice", uid: 25),
-         Quote(imageName: "jest", uid: 26),
-         Quote(imageName: "justine", uid: 27),
-         Quote(imageName: "killing", uid: 28),
-         Quote(imageName: "margarita", uid: 29),
-         Quote(imageName: "road", uid: 30),
-         Quote(imageName: "saga", uid: 31),
-         Quote(imageName: "spake", uid: 32),
-         Quote(imageName: "speedboat", uid: 33),
-         Quote(imageName: "stoner", uid: 34),
-         Quote(imageName: "unbearable", uid: 35),
-         Quote(imageName: "wallflower", uid: 36),
-         Quote(imageName: "zen", uid: 37)]
+         Quote(imageName: "flying", uid: 24),
+         Quote(imageName: "geek", uid: 25),
+         Quote(imageName: "gormenghast", uid: 26),
+         Quote(imageName: "history", uid: 27),
+         Quote(imageName: "ice", uid: 28),
+         Quote(imageName: "jest", uid: 29),
+         Quote(imageName: "justine", uid: 30),
+         Quote(imageName: "killing", uid: 31),
+         Quote(imageName: "margarita", uid: 32),
+         Quote(imageName: "road", uid: 33),
+         Quote(imageName: "saga", uid: 34),
+         Quote(imageName: "spake", uid: 35),
+         Quote(imageName: "speedboat", uid: 36),
+         Quote(imageName: "stoner", uid: 37),
+         Quote(imageName: "unbearable", uid: 38),
+         Quote(imageName: "wallflower", uid: 39),
+         Quote(imageName: "zen", uid: 40)]
 
 
