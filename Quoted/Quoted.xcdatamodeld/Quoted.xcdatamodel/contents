@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="Favorites" representedClassName=".Favorites" syncable="YES">
+        <attribute name="authorName" attributeType="String" defaultValueString="authorNameValue" syncable="YES"/>
+        <attribute name="favorites" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="imageName" attributeType="String" syncable="YES"/>
         <attribute name="quoteId" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="textQuote" attributeType="String" defaultValueString="textQuoteValue" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="quoteId"/>
@@ -9,6 +13,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Favorites" positionX="-45" positionY="0" width="128" height="60"/>
+        <element name="Favorites" positionX="-45" positionY="0" width="128" height="120"/>
     </elements>
 </model>

@@ -6,6 +6,10 @@
 //  Copyright © 2016 Jennifer Driggers. All rights reserved.
 //
 
+// Favorites is an explicitly unwrapped optional here, there is no initial value, you get a value when you switch to a random quote
+
+// NSattributedString
+
 import UIKit
 import CoreData
 
@@ -27,7 +31,7 @@ class ViewController:  UIViewController {
     
     var quotes:[Quote] = quotesArray
     
-    var favorites = Favorites()
+    var favorites : Favorites!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +50,13 @@ class ViewController:  UIViewController {
     
     func switchToRandomQuote() {
         
-        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
+        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count))) + 1
         
         print("the number of quotes we have is \(quotes.count)")
         
         currentQuote = quotes[randomNumber]
+        
+        favorites = Favorites.favoriteForId(randomNumber)
         
 //        Favorites.currentId = currentQuote
         
@@ -78,18 +84,19 @@ class ViewController:  UIViewController {
         
         
         do {
-            if try isQuoteFavorited(currentQuote.uid) == true {
+            if try isQuoteFavorited(currentQuote.uid) == false {
                 favoritesButton.setTitle("delete favorite", forState: .Normal)
+                favorites.addToFavorites()
             } else {
-//                saveFavorite(currentQuote.uid)
+//              saveFavorite(currentQuote.uid)
                 favoritesButton.setTitle("add to favorites", forState: .Normal)
-                favorites.addToFavorites(currentQuote.uid)
+                
             }
             
         } catch {
         }
         
-        print("the number of favorites is \(favorites.areFavorites.count)")
+//        print("the number of favorites is \(favorites.areFavorites.count)")
         
     }
     
@@ -101,43 +108,20 @@ class ViewController:  UIViewController {
     
     // code will need to be moved to the favorites class somehow
     
-//    func saveFavorite(id: Int) {
-//       
-//        
-//        let managedContext = getContext()
-//
-//        let entity =  NSEntityDescription.entityForName("Favorites",
-//                                                        inManagedObjectContext:managedContext)
-//    
-//        let favorite = NSManagedObject(entity: entity!,
-//                                     insertIntoManagedObjectContext: managedContext)
-//      
-//        favorite.setValue(id, forKey: "quoteId")
-//        
-//        print("what is favorite \(favorite)")
-//        
-//        print("the quote that is being saved is \(favorite)")
-//
-//        do {
-//            try managedContext.save()
-//            favorites.append(favorite)
-//        } catch let error as NSError  {
-//            print("Could not save \(error), \(error.userInfo)")
-//        }
-//        
-//    }
     
     func isQuoteFavorited(id: Int) throws -> Bool {
         let managedContext = getContext()
 
         let fetch = NSFetchRequest(entityName: "Favorites")
-        fetch.predicate = NSPredicate(format: "quoteId = %d", id)
+        fetch.predicate = NSPredicate(format: "quoteId = %d AND favorites = 1", id)
         fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
         
         let results = try managedContext.executeFetchRequest(fetch)
         return results.count > 0
         
     }
+    
+
     
     
 }

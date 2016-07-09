@@ -74,7 +74,6 @@
         <!--Favorites Navigation Controller View Controller-->
         <scene sceneID="lA1-W9-QiO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="bRw-WA-4M7" customClass="FavoritesNavigationControllerViewController" customModule="Quoted" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Ttr-Pb-bDC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSZ-QM-k4p">
@@ -85,6 +84,7 @@
                         <segue destination="t6N-kN-Q5g" kind="relationship" relationship="rootViewController" id="2QR-XO-EYw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ad-Ch-Em6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263" y="1461"/>
         </scene>
@@ -101,11 +101,11 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2dU-CV-pWh" id="k4E-gn-aFl">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KH4-8g-TLw">
-                                            <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

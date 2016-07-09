@@ -30,7 +30,10 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         
         let fetchRequest = NSFetchRequest(entityName: "Favorites")
         
+        fetchRequest.predicate = NSPredicate(format: "favorites = 1")
+        
         let sortDescriptor = NSSortDescriptor(key: "quoteId", ascending: true)
+        
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.getContext(), sectionNameKeyPath: nil, cacheName: nil)

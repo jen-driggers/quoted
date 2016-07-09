@@ -6,6 +6,10 @@
 //  Copyright © 2016 Jennifer Driggers. All rights reserved.
 //
 
+// quote setup populates the initial values
+
+// static variable for app context to be referenced everywhere 
+
 import UIKit
 import CoreData
 
@@ -17,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Quote.setup()
+        
         return true
     }
 
@@ -45,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
+    
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "jennyd.info.Quoted" in the application's documents Application Support directory.
@@ -91,6 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+    
+    static var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
     // MARK: - Core Data Saving support
 
