@@ -15,14 +15,14 @@ class Quote: NSObject {
     
     var imageName: String
     var uid: Int
-    var authorName: String
+    var bookName: String
     var textQuote: String
     
     
-    init(imageName: String, uid: Int, authorName: String, textQuote: String) {
+    init(imageName: String, uid: Int, bookName: String, textQuote: String) {
         self.imageName = imageName
         self.uid = uid
-        self.authorName = authorName
+        self.bookName = bookName
         self.textQuote = textQuote
     }
     
@@ -53,7 +53,7 @@ class Quote: NSObject {
         
         favorite.imageName = self.imageName
         
-        favorite.authorName = self.authorName
+        favorite.bookName = self.bookName
         
         favorite.textQuote = self.textQuote
         

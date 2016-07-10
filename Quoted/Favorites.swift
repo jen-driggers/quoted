@@ -26,7 +26,7 @@ class Favorites: NSManagedObject {
     func addToFavorites() {
         print("add to favorites was called")
         
-        print("the author name is \(self.authorName)")
+        print("the author name is \(self.bookName)")
         
         self.isFavorite = true
         
@@ -87,9 +87,9 @@ class Favorites: NSManagedObject {
         }
     }
     
-//    var authorValue : String {
+//    var bookValue : String {
 //        get {
-//            return String(authorName)
+//            return String(bookName)
 //        }
 //    }
 

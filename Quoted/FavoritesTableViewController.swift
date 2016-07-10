@@ -93,12 +93,12 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
             cell.textLabel!.text = stringValue
         }
         
-        if let authorValue = record.valueForKey("authorName") as? String {
+        if let bookValue = record.valueForKey("bookName") as? String {
             // i think that the author name is not being updated to the favorite 
             
-            cell.detailTextLabel!.text = authorValue
+            cell.detailTextLabel!.text = bookValue
             
-            print("configureCell's author value is \(authorValue)")
+            print("configureCell's author value is \(bookValue)")
         
         }
         

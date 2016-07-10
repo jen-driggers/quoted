@@ -87,7 +87,7 @@ class ViewController:  UIViewController {
                 // if fetched id is not equal to quote id
                 favoritesButton.setTitle("delete favorite", forState: .Normal)
                 
-                favorites.authorName = currentQuote.authorName
+                favorites.bookName = currentQuote.bookName
                 
                 favorites.addToFavorites()
             } else {
