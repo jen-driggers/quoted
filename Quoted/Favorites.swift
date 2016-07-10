@@ -21,8 +21,10 @@ import CoreData
 
 class Favorites: NSManagedObject {
     
+    // will need to replace this with actual quantity of favorites from database
+    
     func addToFavorites() {
-        print("i was called from view controller")
+        print("add to favorites was called")
         
         self.isFavorite = true
         
@@ -31,9 +33,20 @@ class Favorites: NSManagedObject {
         } catch {
             print("Failed to save")
         }
-//        areFavorites.append(id)
         
-        // will need to replace this with actual quantity of favorites from database
+    }
+    
+    func deleteFromFavorites() {
+        print("delete from favorites was called")
+        
+        self.isFavorite = false
+        
+        do {
+            try self.managedObjectContext?.save()
+        } catch {
+            print("Failed to delete")
+        }
+        
     }
     
     var isFavorite : Bool {
@@ -56,7 +69,6 @@ class Favorites: NSManagedObject {
         let results = try! managedContext.executeFetchRequest(fetch)
         return results.first as! Favorites
         // will need to add an error here for potential of running out of disc space
-        
         
     }
     

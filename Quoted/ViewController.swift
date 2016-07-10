@@ -50,15 +50,17 @@ class ViewController:  UIViewController {
     
     func switchToRandomQuote() {
         
-        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count))) + 1
+//        Sam had me add a 1 because my samples array started out at 1 and not 0
+//        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count))) + 1
+        
+        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
         
         print("the number of quotes we have is \(quotes.count)")
         
         currentQuote = quotes[randomNumber]
         
         favorites = Favorites.favoriteForId(randomNumber)
-        
-//        Favorites.currentId = currentQuote
+        // favorites is all favorites with random number set to their id
         
         quoteView.image = UIImage(named: currentQuote!.imageName)
         
@@ -76,47 +78,45 @@ class ViewController:  UIViewController {
         
     }
     
-//    var favorites = [NSManagedObject]()
-    
     //Todo: either call a favorites delete method or add method
+    
+    // it added the first quote to my list view but none of the ones after
 
     @IBAction func favoriteAction(sender: UIButton) {
         
         
         do {
             if try isQuoteFavorited(currentQuote.uid) == false {
+                // if fetched id is not equal to quote id
                 favoritesButton.setTitle("delete favorite", forState: .Normal)
                 favorites.addToFavorites()
             } else {
-//              saveFavorite(currentQuote.uid)
                 favoritesButton.setTitle("add to favorites", forState: .Normal)
-                
+                favorites.deleteFromFavorites()
             }
             
         } catch {
         }
         
-//        print("the number of favorites is \(favorites.areFavorites.count)")
         
     }
     
-    
-    func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
-    }
     
     // code will need to be moved to the favorites class somehow
     
     
     func isQuoteFavorited(id: Int) throws -> Bool {
-        let managedContext = getContext()
+        let managedContext = AppDelegate.context
 
         let fetch = NSFetchRequest(entityName: "Favorites")
+        
         fetch.predicate = NSPredicate(format: "quoteId = %d AND favorites = 1", id)
+        // gets the quote id and checks if true? from the saved quotes
+        
         fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
         
         let results = try managedContext.executeFetchRequest(fetch)
+        
         return results.count > 0
         
     }
