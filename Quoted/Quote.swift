@@ -15,11 +15,15 @@ class Quote: NSObject {
     
     var imageName: String
     var uid: Int
+    var authorName: String
+    var textQuote: String
     
     
-    init(imageName: String, uid: Int) {
+    init(imageName: String, uid: Int, authorName: String, textQuote: String) {
         self.imageName = imageName
         self.uid = uid
+        self.authorName = authorName
+        self.textQuote = textQuote
     }
     
     static func setup() {
@@ -48,6 +52,10 @@ class Quote: NSObject {
         favorite.quoteId = self.uid
         
         favorite.imageName = self.imageName
+        
+        favorite.authorName = self.authorName
+        
+        favorite.textQuote = self.textQuote
         
         print("what is favorite \(favorite)")
         

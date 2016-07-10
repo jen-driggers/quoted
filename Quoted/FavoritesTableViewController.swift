@@ -93,6 +93,16 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
             cell.textLabel!.text = stringValue
         }
         
+        if let authorValue = record.valueForKey("authorName") as? String {
+            // i think that the author name is not being updated to the favorite 
+            
+            cell.detailTextLabel!.text = authorValue
+            
+            print("configureCell's author value is \(authorValue)")
+        
+        }
+        
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

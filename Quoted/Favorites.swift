@@ -26,6 +26,8 @@ class Favorites: NSManagedObject {
     func addToFavorites() {
         print("add to favorites was called")
         
+        print("the author name is \(self.authorName)")
+        
         self.isFavorite = true
         
         do {
@@ -84,6 +86,12 @@ class Favorites: NSManagedObject {
             return String(quoteId)
         }
     }
+    
+//    var authorValue : String {
+//        get {
+//            return String(authorName)
+//        }
+//    }
 
 
 }

@@ -78,9 +78,6 @@ class ViewController:  UIViewController {
         
     }
     
-    //Todo: either call a favorites delete method or add method
-    
-    // it added the first quote to my list view but none of the ones after
 
     @IBAction func favoriteAction(sender: UIButton) {
         
@@ -89,6 +86,9 @@ class ViewController:  UIViewController {
             if try isQuoteFavorited(currentQuote.uid) == false {
                 // if fetched id is not equal to quote id
                 favoritesButton.setTitle("delete favorite", forState: .Normal)
+                
+                favorites.authorName = currentQuote.authorName
+                
                 favorites.addToFavorites()
             } else {
                 favoritesButton.setTitle("add to favorites", forState: .Normal)
