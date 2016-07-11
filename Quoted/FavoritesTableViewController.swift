@@ -48,6 +48,11 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // will need to come back to height and shape of cells
+//        tableView.estimatedRowHeight = 89
+//        tableView.rowHeight = UITableViewAutomaticDimension
+        
         do {
             try self.fetchedResultsController.performFetch()
         } catch {

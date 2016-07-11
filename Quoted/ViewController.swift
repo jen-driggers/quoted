@@ -27,6 +27,8 @@ class ViewController:  UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var quoteLabel: UILabel!
+    
     var currentQuote : Quote! = nil
     
     var quotes:[Quote] = quotesArray
@@ -62,7 +64,10 @@ class ViewController:  UIViewController {
         favorites = Favorites.favoriteForId(randomNumber)
         // favorites is all favorites with random number set to their id
         
-        quoteView.image = UIImage(named: currentQuote!.imageName)
+        // removed imageview to start experimenting with text display
+        // quoteView.image = UIImage(named: currentQuote!.imageName)
+        
+        quoteLabel.text = currentQuote.textQuote
         
         print("current quote is \(currentQuote!.imageName), and the uid is \(currentQuote!.uid)");
         
