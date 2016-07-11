@@ -21,6 +21,8 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
     
     let ReuseIdentifierToDoCell = "FavoritesCell"
     
+    
+    
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
@@ -91,12 +93,16 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         
         if let stringValue = record.valueForKey("stringValue") as? String {
             cell.textLabel!.text = stringValue
+            
+            cell.textLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         }
         
         if let bookValue = record.valueForKey("bookName") as? String {
             // i think that the author name is not being updated to the favorite 
             
             cell.detailTextLabel!.text = bookValue
+            
+            cell.detailTextLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
             
             print("configureCell's author value is \(bookValue)")
         
