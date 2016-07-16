@@ -31,14 +31,16 @@ class ViewController:  UIViewController {
     
     var currentQuote : Quote! = nil
     
-    var quotes:[Quote] = quotesArray
+    var quotesSaved : DataHelper! = nil
     
-    var favorites : Favorites!
+//    var quotes:[Quote] = quotesArray
+    
+//    var favorites : Quote!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switchToRandomQuote()
+//        switchToRandomQuote()
     
     }
 
@@ -55,79 +57,110 @@ class ViewController:  UIViewController {
 //        Sam had me add a 1 because my samples array started out at 1 and not 0
 //        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count))) + 1
         
-        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
+//        let quotes = quotesSaved.numberOfQuotes
+//        
+//        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
+//        
+//        print("the number of quotes we have is \(quotes.count)")
+//        
+//        currentQuote = quotes[randomNumber]
         
-        print("the number of quotes we have is \(quotes.count)")
-        
-        currentQuote = quotes[randomNumber]
-        
-        favorites = Favorites.favoriteForId(randomNumber)
+//        var favorites = Quote.favoriteForId(randomNumber)
         // favorites is all favorites with random number set to their id
         
         // removed imageview to start experimenting with text display
         // quoteView.image = UIImage(named: currentQuote!.imageName)
         
-        quoteLabel.text = currentQuote.textQuote
+//        quoteLabel.text = currentQuote.textQuote
+//        
+//        print("current quote is \(currentQuote!.imageName), and the quoteId is \(currentQuote!.quoteId)");
+//        
+//        // check if currentQuote.favorites == true
+//        
+//        do {
+//            if try currentQuote.favorites == true {
+//                favoritesButton.setTitle("delete favorite", forState: .Normal)
+//            } else {
+//                favoritesButton.setTitle("add to favorites", forState: .Normal)
+//            }
+//        } catch {
+//            
+//        }
         
-        print("current quote is \(currentQuote!.imageName), and the uid is \(currentQuote!.uid)");
-        
-        do {
-            if try isQuoteFavorited(currentQuote!.uid) {
-                favoritesButton.setTitle("delete favorite", forState: .Normal)
-            } else {
-                favoritesButton.setTitle("add to favorites", forState: .Normal)
-            }
-            
-        } catch {
-        }
-        
-    }
-    
-
-    @IBAction func favoriteAction(sender: UIButton) {
-        
-        
-        do {
-            if try isQuoteFavorited(currentQuote.uid) == false {
-                // if fetched id is not equal to quote id
-                favoritesButton.setTitle("delete favorite", forState: .Normal)
-                
-                favorites.bookName = currentQuote.bookName
-                
-                favorites.addToFavorites()
-            } else {
-                favoritesButton.setTitle("add to favorites", forState: .Normal)
-                favorites.deleteFromFavorites()
-            }
-            
-        } catch {
-        }
-        
-        
-    }
-    
-    
-    // code will need to be moved to the favorites class somehow
-    
-    
-    func isQuoteFavorited(id: Int) throws -> Bool {
-        let managedContext = AppDelegate.context
-
-        let fetch = NSFetchRequest(entityName: "Favorites")
-        
-        fetch.predicate = NSPredicate(format: "quoteId = %d AND favorites = 1", id)
-        // gets the quote id and checks if true? from the saved quotes
-        
-        fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
-        
-        let results = try managedContext.executeFetchRequest(fetch)
-        
-        return results.count > 0
+//        do {
+//            if try isQuoteFavorited(currentQuote!.quoteId) {
+//                favoritesButton.setTitle("delete favorite", forState: .Normal)
+//            } else {
+//                favoritesButton.setTitle("add to favorites", forState: .Normal)
+//            }
+//            
+//        } catch {
+//        }
         
     }
     
 
+//    @IBAction func favoriteAction(sender: UIButton) {
+//        
+//        do {
+//            if try currentQuote.favorites == true {
+//                
+//                favoritesButton.setTitle("delete favorite", forState: .Normal)
+//                
+//                currentQuote.addToFavorites()
+//                
+//            } else {
+//                
+//                favoritesButton.setTitle("add to favorites", forState: .Normal)
+//                
+//                currentQuote.deleteFromFavorites()
+//            }
+//            
+//        } catch {
+//            
+//        }
+    
+        
+//        do {
+//            if try isQuoteFavorited(currentQuote.quoteId) == false {
+//                // if fetched id is not equal to quote id
+//                favoritesButton.setTitle("delete favorite", forState: .Normal)
+//                
+//                favorites.bookName = currentQuote.bookName
+//                
+//                favorites.addToFavorites()
+//            } else {
+//                favoritesButton.setTitle("add to favorites", forState: .Normal)
+//                favorites.deleteFromFavorites()
+//            }
+//            
+//        } catch {
+//        }
+        
+        
+    }
     
     
-}
+    
+    
+//    func isQuoteFavorited(id: Int) throws -> Bool {
+//        let managedContext = AppDelegate.context
+//
+//        let fetch = NSFetchRequest(entityName: "Quote")
+//        
+//        fetch.predicate = NSPredicate(format: "quoteId = %d AND favorites = 1", id)
+//        // gets the quote id and checks if true? from the saved quotes
+//        
+//        fetch.fetchLimit = 1 // Favorite.quoteId is unique, so we can have 0 or 1 rows anyway...
+//        
+//        let results = try managedContext.executeFetchRequest(fetch)
+//        
+//        return results.count > 0
+//        
+//    }
+    
+
+    
+    
+//}
 

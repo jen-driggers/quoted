@@ -1,8 +1,8 @@
 //
-//  Favorites+CoreDataProperties.swift
+//  Quote+CoreDataProperties.swift
 //  Quoted
 //
-//  Created by Jennifer Driggers on 7/9/16.
+//  Created by Jennifer Driggers on 7/14/16.
 //  Copyright © 2016 jennyd.info. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -12,12 +12,12 @@
 import Foundation
 import CoreData
 
-extension Favorites {
+extension Quote {
 
     @NSManaged var bookName: String
-    @NSManaged var favorites: NSNumber
+    @NSManaged var favorites: Bool
     @NSManaged var imageName: String
-    @NSManaged var quoteId: NSNumber
+    @NSManaged var quoteId: Int32
     @NSManaged var textQuote: String
 
 }

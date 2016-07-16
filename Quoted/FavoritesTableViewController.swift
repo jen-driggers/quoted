@@ -22,7 +22,6 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
     let ReuseIdentifierToDoCell = "FavoritesCell"
     
     
-    
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
@@ -30,9 +29,9 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
-        let fetchRequest = NSFetchRequest(entityName: "Favorites")
+        let fetchRequest = NSFetchRequest(entityName: "Quote")
         
-        fetchRequest.predicate = NSPredicate(format: "favorites = 1")
+        fetchRequest.predicate = NSPredicate(format: "quotes = 1")
         
         let sortDescriptor = NSSortDescriptor(key: "quoteId", ascending: true)
         

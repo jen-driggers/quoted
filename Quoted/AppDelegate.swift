@@ -22,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        Quote.setup()
+//        Quote.setup()
+        
+        let dataHelper = DataHelper(context: self.managedObjectContext)
+        dataHelper.seedDataStore()
+        dataHelper.printNumberOfQuotes()
         
         return true
     }
