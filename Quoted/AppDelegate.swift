@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Quote.setup()
         
         let dataHelper = DataHelper(context: self.managedObjectContext)
-        dataHelper.seedDataStore()
+//        dataHelper.seedDataStore()
         dataHelper.printNumberOfQuotes()
+        dataHelper.fetchData()
         
         return true
     }

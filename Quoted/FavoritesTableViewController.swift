@@ -11,8 +11,6 @@ import CoreData
 
 class FavoritesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    //TODO: the table view isn't updating with added favorites
-    
     @IBOutlet var FavoritesTableView: UITableView!
     
 //    var favorites = [NSManagedObject]()
@@ -31,7 +29,7 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
         
         let fetchRequest = NSFetchRequest(entityName: "Quote")
         
-        fetchRequest.predicate = NSPredicate(format: "quotes = 1")
+//        fetchRequest.predicate = NSPredicate(format: "quotes = 1")
         
         let sortDescriptor = NSSortDescriptor(key: "quoteId", ascending: true)
         

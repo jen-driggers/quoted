@@ -31,17 +31,38 @@ class ViewController:  UIViewController {
     
     var currentQuote : Quote! = nil
     
-    var quotesSaved : DataHelper! = nil
-    
-//    var quotes:[Quote] = quotesArray
-    
-//    var favorites : Quote!
+    var allQuotes:[AnyObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        switchToRandomQuote()
+        
+        fetchQuotes()
     
+    }
+    
+    
+    func fetchQuotes() {
+        let managedContext = AppDelegate.context
+        
+        let idFetch = NSFetchRequest(entityName: "Quote")
+        
+        let primarySortDescriptor = NSSortDescriptor(key: "quoteId", ascending: true)
+        
+        idFetch.sortDescriptors = [primarySortDescriptor]
+        
+        let quotes = (try! managedContext.executeFetchRequest(idFetch)) as! [Quote]
+        
+        // this loop does work to append quote to allquotes
+        for quote in quotes {
+            allQuotes.append(quote)
+            print("the number of quotes we have is \(allQuotes.count) from view controller")
+            print("\(quote.textQuote)")
+        }
+        
+        switchToRandomQuote()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,14 +76,14 @@ class ViewController:  UIViewController {
     func switchToRandomQuote() {
         
 //        Sam had me add a 1 because my samples array started out at 1 and not 0
-//        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count))) + 1
+//        let randomNumber = Int(arc4random_uniform(UInt32(allQuotes.count)))
         
 //        let quotes = quotesSaved.numberOfQuotes
 //        
 //        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
 //        
-//        print("the number of quotes we have is \(quotes.count)")
-//        
+//        print("the number of quotes we have is \(allQuotes.count) from view controller")
+//
 //        currentQuote = quotes[randomNumber]
         
 //        var favorites = Quote.favoriteForId(randomNumber)

@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		865E91C41D4011A900BE085B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		866316DC1D384BB600A6E9FF /* Quote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		866316DD1D384BB600A6E9FF /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 			children = (
 				86A53B0F1CE96EEF00C5A4EC /* QuotedUITests.swift */,
 				86A53B111CE96EEF00C5A4EC /* Info.plist */,
+				865E91C41D4011A900BE085B /* MyPlayground.playground */,
 			);
 			path = QuotedUITests;
 			sourceTree = "<group>";
