@@ -13,9 +13,7 @@
 import UIKit
 import CoreData
 
-class ViewController:  UIViewController {
-    
-    // initialize integer value for current quote? initialize quoteview with an integer value?
+class QuoteViewController:  UIViewController {
     
     // go back to code.tutsplus.com/tutorials/ios-from-scratch-with-swift-exploring-tab-bar-controller--cms-25470 to initialize tabs in view controllers
     
@@ -36,8 +34,6 @@ class ViewController:  UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        switchToRandomQuote()
-        
         fetchQuotes()
     
     }
@@ -54,7 +50,6 @@ class ViewController:  UIViewController {
         
         let quotes = (try! managedContext.executeFetchRequest(idFetch)) as! [Quote]
         
-        // this loop does work to append quote to allquotes
         for quote in quotes {
             allQuotes.append(quote)
             print("the number of quotes we have is \(allQuotes.count) from view controller")
@@ -76,26 +71,17 @@ class ViewController:  UIViewController {
     func switchToRandomQuote() {
         
 //        Sam had me add a 1 because my samples array started out at 1 and not 0
-//        let randomNumber = Int(arc4random_uniform(UInt32(allQuotes.count)))
-        
-//        let quotes = quotesSaved.numberOfQuotes
-//        
-//        let randomNumber = Int(arc4random_uniform(UInt32(quotes.count)))
-//        
-//        print("the number of quotes we have is \(allQuotes.count) from view controller")
-//
-//        currentQuote = quotes[randomNumber]
-        
-//        var favorites = Quote.favoriteForId(randomNumber)
-        // favorites is all favorites with random number set to their id
+        let randomNumber = Int(arc4random_uniform(UInt32(allQuotes.count)))
+
+        currentQuote = allQuotes[randomNumber] as! Quote
         
         // removed imageview to start experimenting with text display
         // quoteView.image = UIImage(named: currentQuote!.imageName)
         
-//        quoteLabel.text = currentQuote.textQuote
-//        
-//        print("current quote is \(currentQuote!.imageName), and the quoteId is \(currentQuote!.quoteId)");
-//        
+        quoteLabel.text = currentQuote.textQuote
+
+        print("current quote is \(currentQuote!.imageName), and the quoteId is \(currentQuote!.quoteId)");
+//
 //        // check if currentQuote.favorites == true
 //        
 //        do {
