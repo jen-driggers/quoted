@@ -30,9 +30,14 @@ class QuoteViewController:  UIViewController {
     var currentQuote : Quote! = nil
     
     var allQuotes:[AnyObject] = []
+    
+    var theQuote : Quote?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: should the title be a snippet of the quote, or the book name, or something else?
+        title = "Quote"
         
         fetchQuotes()
     
@@ -70,13 +75,10 @@ class QuoteViewController:  UIViewController {
     
     func switchToRandomQuote() {
         
-//        Sam had me add a 1 because my samples array started out at 1 and not 0
         let randomNumber = Int(arc4random_uniform(UInt32(allQuotes.count)))
-
-        currentQuote = allQuotes[randomNumber] as! Quote
         
-        // removed imageview to start experimenting with text display
-        // quoteView.image = UIImage(named: currentQuote!.imageName)
+        //TODO: add logic here that checks if a quote id has been passed from the table, otherwise the currentQuote is random
+        currentQuote = allQuotes[randomNumber] as! Quote
         
         quoteLabel.text = currentQuote.textQuote
 

@@ -24,6 +24,8 @@ public class DataHelper {
     
     var favoritesArray: [AnyObject] = []
     
+    var quotesArray:[AnyObject] = []
+    
     public func fetchData() {
         createFetch()
     }
@@ -96,6 +98,7 @@ public class DataHelper {
             newQuote.bookName = quote.bookName
             newQuote.textQuote = quote.textQuote
             newQuote.favorites = quote.favorites
+            quotesArray.append(newQuote)
         }
     
         do {

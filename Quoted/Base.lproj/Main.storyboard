@@ -49,7 +49,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ze-My-Wbe">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ze-My-Wbe">
                                 <rect key="frame" x="20" y="172" width="30" height="30"/>
                                 <state key="normal" title="List"/>
                                 <connections>
@@ -73,6 +73,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quotes" id="44d-w9-iz7"/>
+                    <navigationItem key="navigationItem" id="F7m-A5-hPI"/>
                     <connections>
                         <outlet property="favoritesButton" destination="vYC-DL-Ko9" id="ap6-R2-Dby"/>
                         <outlet property="quoteButton" destination="iMr-ic-Vbx" id="ex3-bC-pKz"/>
@@ -132,6 +133,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iEs-Sh-pUU" kind="show" id="lVK-fD-cZy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -139,7 +143,7 @@
                             <outlet property="delegate" destination="t6N-kN-Q5g" id="p2c-gM-pBN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Quotes" id="EHO-Nt-3cz" userLabel="Quotes"/>
+                    <navigationItem key="navigationItem" title="Quotes" id="EHO-Nt-3cz"/>
                     <connections>
                         <outlet property="FavoritesTableView" destination="649-4k-29n" id="lPw-n0-XDn"/>
                     </connections>

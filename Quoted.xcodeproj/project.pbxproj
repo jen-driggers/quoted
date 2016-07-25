@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860B14631D45B19E00B126FA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B14621D45B19E00B126FA /* NavigationController.swift */; };
 		8661A5DD1D209BFF006A2618 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */; };
 		866316DE1D384BB600A6E9FF /* Quote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866316DC1D384BB600A6E9FF /* Quote+CoreDataProperties.swift */; };
 		866316DF1D384BB600A6E9FF /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866316DD1D384BB600A6E9FF /* Quote.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		860B14621D45B19E00B126FA /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		865E91C41D4011A900BE085B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		866316DC1D384BB600A6E9FF /* Quote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quote+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				8661A5DC1D209BFF006A2618 /* FavoritesTableViewController.swift */,
 				86F9DCAB1D1F4B140017A493 /* Quoted.xcdatamodeld */,
 				86A53AF31CE96EEF00C5A4EC /* Main.storyboard */,
+				860B14621D45B19E00B126FA /* NavigationController.swift */,
 				86A53AF61CE96EEF00C5A4EC /* Assets.xcassets */,
 				86A53AF81CE96EEF00C5A4EC /* LaunchScreen.storyboard */,
 				86A53AFB1CE96EEF00C5A4EC /* Info.plist */,
@@ -287,6 +290,7 @@
 				86A53AF01CE96EEF00C5A4EC /* AppDelegate.swift in Sources */,
 				86F9DCAD1D1F4B140017A493 /* Quoted.xcdatamodeld in Sources */,
 				866316DE1D384BB600A6E9FF /* Quote+CoreDataProperties.swift in Sources */,
+				860B14631D45B19E00B126FA /* NavigationController.swift in Sources */,
 				86BD0B461D2A2F3600C0F27E /* TestDataSource.swift in Sources */,
 				86B9516B1D2B417900F2D6E3 /* QuoteSamples.swift in Sources */,
 			);

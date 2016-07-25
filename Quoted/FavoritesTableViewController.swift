@@ -19,7 +19,6 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
     
     let ReuseIdentifierToDoCell = "FavoritesCell"
     
-    
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
@@ -120,6 +119,22 @@ class FavoritesTableViewController: UITableViewController, NSFetchedResultsContr
          configureCell(cell, atIndexPath: indexPath)
         
          return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let record = fetchedResultsController.objectAtIndexPath(indexPath)
+        
+        let quote = record[indexPath.row]
+        let destination = QuoteViewController()
+        destination.theQuote = quote as? Quote
+//        destination.performSegueWithIdentifier("QuoteViewController", sender: self)
+        
+//        for x in destination.allQuotes {
+//            let quoteSelected = quote as! Quote
+//            destination.performSegueWithIdentifier("QuoteViewController", sender: self)
+//        }
+        
         
     }
     
